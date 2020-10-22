@@ -100,6 +100,11 @@ taskList.forEach(task => {
                 sleep(500 * speed);
                 className("android.widget.Button").text("施肥").findOne().click()
                 toast("施肥成功");
+            case '领取奖励':
+                sleep(random(501, 515) * speed);
+                a.click();
+                log('奖励领取成功');
+                break;
             default:
                 toast("default")
                 break;
