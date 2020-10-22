@@ -46,8 +46,20 @@ sleep(1000 * speed);
 //打开活动页面
 launch("com.taobao.taobao");
 sleep(1000 * speed);
-toast("请手动点进养猫活动页面")
+// toast("请手动点进养猫活动页面")
+log("正在等待进入天猫双11喵喵喵活动页面\n如果没有反应请手动点击搜索框");
+className("android.view.View").desc("搜索").waitFor()
+let search = className("android.view.View").desc("搜索").depth(12).findOne().bounds()
+click(search.centerX(),search.centerY())
+desc("搜索发现").findOne()
+sleep(random(5, 10) * speed);
+setText("喵币")
+sleep(random(5, 10) * speed);
+id("searchbtn").findOne().click()
 className("android.widget.Button").text("赚喵币").waitFor()
+
+sleep(random(1001, 1021) * speed);
+className("android.widget.Button").text("赚喵币").findOne().click()
 
 sleep(1000);
 if (!textContains("淘宝成就点").exists()) {
