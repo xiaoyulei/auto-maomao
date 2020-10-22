@@ -70,7 +70,7 @@ taskList.forEach(task => {
             case '去搜索':
             case '去围观':
             case '去浏览':
-			case '去完成':
+            case '去完成':
                 sleep(500 * speed);
                 a.click();
                 sleep(1500 * speed);
@@ -84,10 +84,10 @@ taskList.forEach(task => {
                 toast("已完成第" + i + "次任务！")
                 back();
                 break;
-			case '去施肥':
+            case '去施肥':
                 sleep(500 * speed);
-				className("android.widget.Button").text("施肥").findOne().click()
-				toast("施肥成功");
+                className("android.widget.Button").text("施肥").findOne().click()
+                toast("施肥成功");
             default:
                 toast("default")
                 break;
