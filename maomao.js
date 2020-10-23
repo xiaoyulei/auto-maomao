@@ -1,7 +1,8 @@
 // 养猫
 var i = 0;
 var j = 0;
-var taskList = ['去搜索', '去围观', '去浏览', '去完成', '去施肥'];
+//var taskList = ['去搜索', '去围观', '去浏览', '去完成', '去施肥'];
+var taskList = ['去搜索', '去围观', '去浏览', '逛一逛', '去施肥'];
 
 var height = device.height; 
 var width = device.width;
@@ -77,11 +78,11 @@ taskList.forEach(task => {
         toast("开始做第" + (i+1) + "次任务！");
         var a = text(task).findOnce(j);
         switch (task) {
-            case '去完成':
-                break;
             case '去搜索':
             case '去围观':
             case '去浏览':
+            case '去完成':
+            case '逛一逛':
                 sleep(500 * speed);
                 a.click();
                 sleep(1500 * speed);
@@ -111,7 +112,7 @@ taskList.forEach(task => {
                     break;
                 }
                 
-                textContains("完成").findOne(10000 * speed);
+                textContains("任务完成").findOne(10000 * speed);
                 i++;
                 toast("已完成第" + i + "次任务！")
                 back();
