@@ -85,7 +85,8 @@ taskList.forEach(task => {
             case '逛一逛':
                 sleep(500 * speed);
                 a.click();
-
+                sleep(2000 * speed);
+                
                 var count = 0;
                 
                 // 等待“浏览15秒得喵币”的界面出现
