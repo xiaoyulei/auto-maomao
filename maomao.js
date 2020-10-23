@@ -58,22 +58,20 @@ sleep(random(1, 5) * speed);
 id("searchbtn").findOne().click()
 className("android.widget.Button").text("赚喵币").waitFor()
 
-//sleep(random(1001, 1021) * speed);
-//className("android.widget.Button").text("赚喵币").findOne().click()
-
 sleep(1000);
 if (!textContains("淘宝成就点").exists()) {
     className("android.widget.Button").text("赚喵币").findOne().click()
     toast("点击成功");
 }
+
 sleep(1500 * speed);
 if (className("android.widget.Button").text("签到").exists()) {
     className("android.widget.Button").text("签到").click()
     sleep(200);
     toast("签到成功");
 } else { toast("已签到"); }
-sleep(1500 * speed);
 
+sleep(1500 * speed);
 taskList.forEach(task => {
     while (textContains(task).exists()) {
         toast("开始做第" + (i+1) + "次任务！");
