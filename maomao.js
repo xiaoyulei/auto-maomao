@@ -52,7 +52,7 @@ className("android.view.View").desc("搜索").waitFor()
 let search = className("android.view.View").desc("搜索").depth(12).findOne().bounds()
 click(search.centerX(),search.centerY())
 desc("搜索发现").findOne()
-sleep(random(1, 5) * speed);
+sleep(random(3, 5) * speed);
 setText("喵币")
 sleep(random(1, 5) * speed);
 id("searchbtn").findOne().click()
@@ -77,10 +77,11 @@ taskList.forEach(task => {
         toast("开始做第" + (i+1) + "次任务！");
         var a = text(task).findOnce(j);
         switch (task) {
+            case '去完成':
+                break;
             case '去搜索':
             case '去围观':
             case '去浏览':
-            case '去完成':
                 sleep(500 * speed);
                 a.click();
                 sleep(1500 * speed);
