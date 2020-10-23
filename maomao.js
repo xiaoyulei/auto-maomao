@@ -2,7 +2,7 @@
 var i = 0;
 var j = 0;
 //var taskList = ['去搜索', '去围观', '去浏览', '去完成', '去施肥'];
-var taskList = ['去搜索', '去围观', '去浏览', '逛一逛', '去施肥'];
+var taskList = ['去搜索', '去围观', '去浏览', '去施肥'];
 
 var height = device.height; 
 var width = device.width;
