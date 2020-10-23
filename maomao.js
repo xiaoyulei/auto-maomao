@@ -2,7 +2,7 @@
 var i = 0;
 var j = 0;
 //var taskList = ['去搜索', '去围观', '去浏览', '去完成', '去施肥'];
-var taskList = ['去搜索', '去围观', '去浏览', '去施肥'];
+var taskList = ['去搜索', '去围观', '去浏览', '去施肥', '领取奖励'];
 
 var height = device.height; 
 var width = device.width;
@@ -86,11 +86,23 @@ taskList.forEach(task => {
                 sleep(500 * speed);
                 a.click();
 
+                var count = 0;
+                
                 // 等待“浏览15秒得喵币”的界面出现
-                textContains("得喵币").findOne(20000 * speed);
+                while (count < 20 && !textContains("得喵币").exists()) {
+                    sleep(1000 * speed);
+                    count++;
+                }
+                
+                // 没有找到任务开始界面
+                if (count >= 20) {
+                    toast("没有找到得喵币");
+                    back();
+                    break;
+                }
 
                 // 等待“完成”界面出现
-                var count  = 0;
+                count  = 0;
                 while (count < 20 && !textContains("完成").exists()) {
                     swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
                     sleep(1000 * speed);
