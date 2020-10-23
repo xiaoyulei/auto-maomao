@@ -6,7 +6,7 @@ var taskList = ['去搜索', '去围观', '去浏览', '去施肥'];
 
 var height = device.height; 
 var width = device.width;
-toast("设备宽" + width + "\n设备高" + height + "\n手机型号" + device.model + "\n安卓版本" + device.release)
+toast("设备宽" + width + "\n设备高" + height + "\n手机型号" + device.model + "\n安卓版本" + device.release);
 setScreenMetrics(width, height);
 
 // 浏览速度
@@ -49,25 +49,25 @@ launch("com.taobao.taobao");
 sleep(1000 * speed);
 // toast("请手动点进养猫活动页面")
 log("正在等待进入天猫双11喵喵喵活动页面\n如果没有反应请手动点击搜索框");
-className("android.view.View").desc("搜索").waitFor()
-let search = className("android.view.View").desc("搜索").depth(12).findOne().bounds()
-click(search.centerX(),search.centerY())
-desc("搜索发现").findOne()
+className("android.view.View").desc("搜索").waitFor();
+let search = className("android.view.View").desc("搜索").depth(12).findOne().bounds();
+click(search.centerX(),search.centerY());
+desc("搜索发现").findOne();
 sleep(random(3, 5) * speed);
-setText("喵币")
+setText("喵币");
 sleep(random(1, 5) * speed);
-id("searchbtn").findOne().click()
-className("android.widget.Button").text("赚喵币").waitFor()
+id("searchbtn").findOne().click();
+className("android.widget.Button").text("赚喵币").waitFor();
 
 sleep(1000);
 if (!textContains("淘宝成就点").exists()) {
-    className("android.widget.Button").text("赚喵币").findOne().click()
+    className("android.widget.Button").text("赚喵币").findOne().click();
     toast("点击成功");
 }
 
 sleep(1000 * speed);
 if (className("android.widget.Button").text("签到").exists()) {
-    className("android.widget.Button").text("签到").click()
+    className("android.widget.Button").text("签到").click();
     sleep(200);
     toast("签到成功");
 } else { toast("已签到"); }
@@ -96,7 +96,7 @@ taskList.forEach(task => {
                     sleep(1000 * speed);
                 }
 
-                if (count >= 20) toast("没有按时完成");
+                if (count >= 20) { toast("没有按时完成"); }
                 else {
                     i++;
                     toast("已完成第" + i + "次任务！");
