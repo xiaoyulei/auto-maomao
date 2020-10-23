@@ -65,14 +65,14 @@ if (!textContains("淘宝成就点").exists()) {
     toast("点击成功");
 }
 
-sleep(1500 * speed);
+sleep(1000 * speed);
 if (className("android.widget.Button").text("签到").exists()) {
     className("android.widget.Button").text("签到").click()
     sleep(200);
     toast("签到成功");
 } else { toast("已签到"); }
 
-sleep(1500 * speed);
+sleep(1000 * speed);
 taskList.forEach(task => {
     while (textContains(task).exists()) {
         toast("开始做第" + (i+1) + "次任务！");
@@ -96,8 +96,12 @@ taskList.forEach(task => {
                     sleep(1000 * speed);
                 }
 
-                i++;
-                toast("已完成第" + i + "次任务！")
+                if (count >= 20) toast("没有按时完成");
+                else {
+                    i++;
+                    toast("已完成第" + i + "次任务！")
+                }
+
                 back();
                 break;
             case '去施肥':
