@@ -101,7 +101,6 @@ taskList.forEach(task => {
                     i++;
                     toast("已完成第" + i + "次任务！")
                 }
-
                 back();
                 break;
             case '去施肥':
