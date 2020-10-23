@@ -58,8 +58,8 @@ sleep(random(5, 10) * speed);
 id("searchbtn").findOne().click()
 className("android.widget.Button").text("赚喵币").waitFor()
 
-sleep(random(1001, 1021) * speed);
-className("android.widget.Button").text("赚喵币").findOne().click()
+//sleep(random(1001, 1021) * speed);
+//className("android.widget.Button").text("赚喵币").findOne().click()
 
 sleep(1000);
 if (!textContains("淘宝成就点").exists()) {
