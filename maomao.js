@@ -85,13 +85,12 @@ taskList.forEach(task => {
             case '逛一逛':
                 sleep(500 * speed);
                 a.click();
-                sleep(1500 * speed);
 
                 // 等待“浏览15秒得喵币”的界面出现
                 textContains("得喵币").findOne(20000 * speed);
 
                 // 等待“完成”界面出现
-                count  = 0;
+                var count  = 0;
                 while (!textContains("完成").exist() && count < 20) {
                     swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
                     sleep(1000 * speed);
