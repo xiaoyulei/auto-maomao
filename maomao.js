@@ -91,9 +91,9 @@ taskList.forEach(task => {
                 
                 // 等待“浏览15秒得喵币”的界面出现
                 while (count < 20 && !textContains("得喵币").exists()) {
+                    count++;
                     toast("第" + count + "次没有找到得喵币。");
                     sleep(1000);
-                    count++;
                 }
                 
                 // 没有找到任务开始界面
@@ -108,6 +108,7 @@ taskList.forEach(task => {
                 while (count < 20 && !textContains("完成").exists()) {
                     swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
                     sleep(1000);
+                    count++;
                     toast("第" + count + "次没有找到完成。");
                 }
 
