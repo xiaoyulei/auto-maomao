@@ -101,7 +101,7 @@ taskList.forEach(task => {
                 
                 // 等待“完成”界面出现
                 count  = 0;
-                while (!textContains("任务完成").exist() && count < 20) {
+                while (!textContains("完成").exist() && count < 20) {
                     swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
                     sleep(1000 * speed);
                 }
@@ -112,7 +112,7 @@ taskList.forEach(task => {
                     break;
                 }
                 
-                textContains("任务完成").findOne(10000 * speed);
+                textContains("完成").findOne(10000 * speed);
                 i++;
                 toast("已完成第" + i + "次任务！")
                 back();
