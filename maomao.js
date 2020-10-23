@@ -88,6 +88,8 @@ taskList.forEach(task => {
                 sleep(1500 * speed);
                 
                 // 等待“浏览15秒得喵币”的界面出现
+                textContains("得喵币").findOne(20000 * speed);
+                /*
                 var count = 0;
                 while (!textContains("得喵币").exists() && count < 30) {
                     sleep(500 * speed);
@@ -99,6 +101,7 @@ taskList.forEach(task => {
                     back();
                     break;
                 }
+                */
                 
                 // 等待“完成”界面出现
                 count  = 0;
@@ -108,10 +111,12 @@ taskList.forEach(task => {
                 }
                 
                 // 没找到任务完成，按理不应该出现这种情况
+                /*
                 if (count >= 20) {
                     back();
                     break;
                 }
+                */
                 
                 textContains("完成").findOne(20000 * speed);
                 i++;
