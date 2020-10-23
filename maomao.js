@@ -91,7 +91,7 @@ taskList.forEach(task => {
 
                 // 等待“完成”界面出现
                 var count  = 0;
-                while (!textContains("完成").exists() && count < 20) {
+                while (count < 20 && !textContains("完成").exists()) {
                     swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
                     sleep(1000 * speed);
                 }
@@ -99,7 +99,7 @@ taskList.forEach(task => {
                 if (count >= 20) toast("没有按时完成");
                 else {
                     i++;
-                    toast("已完成第" + i + "次任务！")
+                    toast("已完成第" + i + "次任务！");
                 }
                 back();
                 break;
@@ -113,7 +113,7 @@ taskList.forEach(task => {
                 log('奖励领取成功');
                 break;
             default:
-                toast("default")
+                toast("default");
                 break;
         }
         sleep(2000 * speed);
