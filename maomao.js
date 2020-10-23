@@ -52,9 +52,9 @@ className("android.view.View").desc("搜索").waitFor()
 let search = className("android.view.View").desc("搜索").depth(12).findOne().bounds()
 click(search.centerX(),search.centerY())
 desc("搜索发现").findOne()
-sleep(random(5, 10) * speed);
+sleep(random(1, 5) * speed);
 setText("喵币")
-sleep(random(5, 10) * speed);
+sleep(random(1, 5) * speed);
 id("searchbtn").findOne().click()
 className("android.widget.Button").text("赚喵币").waitFor()
 
