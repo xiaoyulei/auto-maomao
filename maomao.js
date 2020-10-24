@@ -154,7 +154,7 @@ if (closeBtn != null) {
 
 toast("开始撸猫");
 var cc = 0;
-while (cc < 100) {
+while (cc < 1000) {
     textContains("点击撸猫").findOne().click();
     cc++;
     toast("第" + cc + "次撸猫");
