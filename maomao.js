@@ -100,6 +100,7 @@ taskList.forEach(task => {
                 while (count < 20 && !textContains("得喵币").exists()) {
                     count++;
                     toast("第" + count + "次没有找到得喵币。");
+                    swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
                     sleep(1000);
                 }
                 
