@@ -143,9 +143,14 @@ taskList.forEach(task => {
 });
 
 toast("完成任务");
-back();
 
-sleep(2000 * speed);
+// 关闭任务界面
+sleep(2000);
+var closeBtn = textContains("关闭").findOne();
+if (closeBtn != null) {
+    closeBtn.click();
+    sleep(1000);
+}
 
 toast("开始撸猫");
 var cc = 0;
