@@ -76,7 +76,13 @@ sleep(1000 * speed);
 taskList.forEach(task => {
     while (textContains(task).exists()) {
         toast("开始做第" + (i+1) + "次任务！");
+        
         var a = text(task).findOnce(j);
+        if (a ==  null) {
+            toase("没找到" + task + "界面");
+            continue;
+        }
+        
         switch (task) {
             case '去搜索':
             case '去围观':
