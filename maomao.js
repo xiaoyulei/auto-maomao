@@ -158,7 +158,7 @@ while (cc < 100) {
     textContains("点击撸猫").findOne().click();
     cc++;
     toast("第" + cc + "次撸猫");
-    sleep(1000);
+    sleep(2000);
 }
 
 exit();
