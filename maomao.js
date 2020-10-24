@@ -65,10 +65,10 @@ if (!textContains("淘宝成就点").exists()) {
     toast("点击成功");
 }
 
-sleep(1000 * speed);
+sleep(2000 * speed);
 if (className("android.widget.Button").text("签到").exists()) {
     className("android.widget.Button").text("签到").click();
-    sleep(200);
+    sleep(1000);
     toast("签到成功");
 } else { toast("已签到"); }
 
@@ -142,5 +142,17 @@ taskList.forEach(task => {
     }
 });
 
-toast("完成");
+toast("完成任务");
+back();
+
+sleep(2000 * speed);
+
+toast("开始撸猫");
+var cc = 0;
+while (cc < 100) {
+    textContains("点击撸猫").findOne().click();
+    cc++;
+    toast("第" + cc + "次撸猫");
+}
+
 exit();
