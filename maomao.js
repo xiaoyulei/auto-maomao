@@ -79,7 +79,7 @@ taskList.forEach(task => {
         
         var a = text(task).findOnce(j);
         if (a ==  null) {
-            toase("没找到" + task + "界面");
+            toast("没找到" + task + "界面");
             continue;
         }
         
