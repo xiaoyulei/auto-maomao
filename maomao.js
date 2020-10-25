@@ -92,7 +92,7 @@ taskList.forEach(task => {
             case '去观看':
                 sleep(500 * speed);
                 a.click();
-                sleep(2000 * speed);
+                sleep(5000 * speed);
                 
                 var count = 0;
                 
