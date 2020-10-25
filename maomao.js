@@ -161,6 +161,11 @@ if (closeBtn != null) {
 toast("开始撸猫");
 var cc = 0;
 while (cc < 1000) {
+    if (!textContains("点击撸猫").exists()) {
+        toast("不在撸猫界面，退出");
+        break;
+    }
+    
     textContains("点击撸猫").findOne().click();
     cc++;
     toast("第" + cc + "次撸猫");
