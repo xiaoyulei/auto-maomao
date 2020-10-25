@@ -102,9 +102,10 @@ taskList.forEach(task => {
                     toast("第" + count + "次没有找到得喵币。");
                     if (task != "去观看") {
                         swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
+                        sleep(1000);
+                    } else {
+                        sleep(3000);
                     }
-
-                    sleep(1000);
                 }
                 
                 // 没有找到任务开始界面
