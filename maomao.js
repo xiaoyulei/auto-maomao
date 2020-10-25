@@ -2,7 +2,7 @@
 var i = 0;
 var j = 0;
 //var taskList = ['去搜索', '去围观', '去浏览', '去完成', '去施肥'];
-var taskList = ['去搜索', '逛一逛', '去围观', '去观看', '去浏览', '去施肥', '领取奖励'];
+var taskList = ['去搜索', '逛一逛', '去围观', '去观看', '去浏览', '我知道了', '去施肥', '领取奖励'];
 
 var height = device.height; 
 var width = device.width;
@@ -139,6 +139,11 @@ taskList.forEach(task => {
                 sleep(random(501, 515) * speed);
                 a.click();
                 log('奖励领取成功');
+                break;
+            case '我知道了':
+                sleep(1000);
+                textContains("我知道了").findOne().click();
+                sleep(1000);
                 break;
             default:
                 toast("default");
