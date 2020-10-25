@@ -106,6 +106,13 @@ taskList.forEach(task => {
                     } else {
                         sleep(3000);
                     }
+                    
+                    // 发现完成，说明本次任务已经结束了
+                    if (textContains("完成").exists()) {
+                        toast("本次任务已经完成");
+                        back();
+                        break;
+                    }
                 }
                 
                 // 没有找到任务开始界面
