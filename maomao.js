@@ -133,7 +133,9 @@ taskList.forEach(task => {
                 break;
             case '去施肥':
                 sleep(500 * speed);
+                textContains("去施肥").findOne().click();
                 className("android.widget.Button").text("施肥").findOne().click()
+                sleep(500 * speed);
                 toast("施肥成功");
             case '领取奖励':
                 sleep(random(501, 515) * speed);
