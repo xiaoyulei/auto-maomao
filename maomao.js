@@ -97,7 +97,7 @@ taskList.forEach(task => {
                 var count = 0;
                 
                 // 等待“浏览15秒得喵币”的界面出现
-                while (count < 20 && !textContains("得喵币").exists()) {
+                while (count < 20 && !textContains("得喵币").exists() && !className("android.view.View").desc("得喵币").exists()) {
                     count++;
                     toast("第" + count + "次没有找到得喵币。");
                     if (task != "去观看") {
@@ -108,7 +108,7 @@ taskList.forEach(task => {
                     }
                     
                     // 发现完成，说明本次任务已经结束了
-                    if (textContains("完成").exists()) {
+                    if (textContains("完成").exists() || className("android.view.View").desc("任务完成").exists() || className("android.view.View").desc("全部完成啦").exists()) {
                         toast("本次任务已经完成");
                         back();
                         break;
@@ -124,7 +124,7 @@ taskList.forEach(task => {
 
                 // 等待“完成”界面出现
                 count  = 0;
-                while (count < 20 && !textContains("完成").exists()) {
+                while (count < 20 && !textContains("完成").exists() && !className("android.view.View").desc("任务完成").exists() && !className("android.view.View").desc("全部完成啦").exists()) {
                     swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
                     sleep(1000);
                     count++;
