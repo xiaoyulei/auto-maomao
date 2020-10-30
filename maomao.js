@@ -2,7 +2,7 @@
 var i = 0;
 var j = 0;
 //var taskList = ['去搜索', '去围观', '去浏览', '去完成', '去施肥'];
-var taskList = ['去搜索', '逛一逛', '去围观', '去观看', '去浏览', '我知道了', '去施肥', '领取奖励'];
+var taskList = ['去搜索', '逛一逛', '去围观', '去观看', '去浏览', '去完成', '我知道了', '去施肥', '领取奖励'];
 
 var height = device.height; 
 var width = device.width;
@@ -101,7 +101,7 @@ taskList.forEach(task => {
                     count++;
                     toast("第" + count + "次没有找到得喵币。");
                     if (task != "去观看") {
-                        swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
+                        //swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
                         sleep(1000);
                     } else {
                         sleep(3000);
@@ -125,7 +125,7 @@ taskList.forEach(task => {
                 // 等待“完成”界面出现
                 count  = 0;
                 while (count < 20 && !textContains("完成").exists() && !className("android.view.View").desc("任务完成").exists() && !className("android.view.View").desc("全部完成啦").exists()) {
-                    swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
+                    //swipe(width / 2, height - 500, width / 2, 0, 800 * speed);
                     sleep(1000);
                     count++;
                     toast("第" + count + "次没有找到完成。");
